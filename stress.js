@@ -6,7 +6,6 @@ var room = url.split("/")[4]; // get the room from the url
 var serverUrl = url.split("/")[0] + "//" + url.split("/")[2]; // get the host url
 var clientCount = process.argv[3]; // get number of clients 
 var delayBetweenDrawings = process.argv[4]; // Seconds between each change
-var sockets = {};
 
 // turn sconds into ms
 delayBetweenDrawings = delayBetweenDrawings * 1000;
@@ -21,8 +20,8 @@ while (i < clientCount){
 }
 
 function createClient(userid){
-  sockets[userid] = io.connect(serverUrl, {'force new connection': true});
-  sockets[userid].emit('subscribe', { room: room });
+  var socket = io.connect(serverUrl, {'force new connection': true});
+  socket.emit('subscribe', { room: room });
 
   setInterval(function(){
     var path_to_send = { 
@@ -45,7 +44,7 @@ function createClient(userid){
         "bottom": ["Point", randCoOrd(), randCoOrd()]
       }]
    }
-    sockets[userid].emit('draw:progress', room, userid, JSON.stringify(path_to_send));
+    socket.emit('draw:progress', room, userid, JSON.stringify(path_to_send));
     path_to_send.path = [],
     path_to_send.end = {
       x: randCoOrd(),
@@ -53,7 +52,7 @@ function createClient(userid){
     }
   
     console.log("Sent Path");
-    sockets[userid].emit('draw:end', room, userid, JSON.stringify(path_to_send));
+    socket.emit('draw:end', room, userid, JSON.stringify(path_to_send));
   }, delayBetweenDrawings);
 }
 
