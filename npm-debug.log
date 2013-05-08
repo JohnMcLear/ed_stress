@@ -1,0 +1,135 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@1.2.15
+3 info using node@v0.10.1
+4 verbose publish [ '.' ]
+5 verbose read json /home/jose/ed_stress/package.json
+6 verbose cache add [ '.', null ]
+7 verbose cache add name=undefined spec="." args=[".",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: '.',
+8 verbose parsed url   path: '.',
+8 verbose parsed url   href: '.' }
+9 silly lockFile 3a52ce78- .
+10 verbose lock . /home/jose/.npm/3a52ce78-.lock
+11 verbose read json package.json
+12 verbose tar pack [ '/home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/tmp.tgz',
+12 verbose tar pack   '.' ]
+13 verbose tarball /home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/tmp.tgz
+14 verbose folder .
+15 info prepublish ed_stress@0.0.1
+16 silly lockFile 3a52ce78- .
+17 verbose lock . /home/jose/.npm/3a52ce78-.lock
+18 silly lockFile b4246e48-6540-0-10744761186651886-tmp-tgz /home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/tmp.tgz
+19 verbose lock /home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/tmp.tgz /home/jose/.npm/b4246e48-6540-0-10744761186651886-tmp-tgz.lock
+20 silly lockFile 3a52ce78- .
+21 silly lockFile 3a52ce78- .
+22 silly lockFile b4246e48-6540-0-10744761186651886-tmp-tgz /home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/tmp.tgz
+23 silly lockFile b4246e48-6540-0-10744761186651886-tmp-tgz /home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/tmp.tgz
+24 verbose tar unpack /home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/tmp.tgz
+25 silly lockFile cd64c850-6540-0-10744761186651886-package /home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/package
+26 verbose lock /home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/package /home/jose/.npm/cd64c850-6540-0-10744761186651886-package.lock
+27 silly lockFile b4246e48-6540-0-10744761186651886-tmp-tgz /home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/tmp.tgz
+28 verbose lock /home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/tmp.tgz /home/jose/.npm/b4246e48-6540-0-10744761186651886-tmp-tgz.lock
+29 silly gunzTarPerm modes [ '755', '644' ]
+30 silly gunzTarPerm extractEntry package.json
+31 silly gunzTarPerm extractEntry .npmignore
+32 silly gunzTarPerm extractEntry README.md
+33 silly gunzTarPerm extractEntry stress.js
+34 verbose read json /home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/package/package.json
+35 silly lockFile cd64c850-6540-0-10744761186651886-package /home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/package
+36 silly lockFile cd64c850-6540-0-10744761186651886-package /home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/package
+37 silly lockFile b4246e48-6540-0-10744761186651886-tmp-tgz /home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/tmp.tgz
+38 silly lockFile b4246e48-6540-0-10744761186651886-tmp-tgz /home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/tmp.tgz
+39 verbose from cache /home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/package/package.json
+40 verbose tar pack [ '/home/jose/.npm/ed_stress/0.0.1/package.tgz',
+40 verbose tar pack   '/home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/package' ]
+41 verbose tarball /home/jose/.npm/ed_stress/0.0.1/package.tgz
+42 verbose folder /home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/package
+43 silly lockFile cd64c850-6540-0-10744761186651886-package /home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/package
+44 verbose lock /home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/package /home/jose/.npm/cd64c850-6540-0-10744761186651886-package.lock
+45 silly lockFile 11ab982f--npm-ed-stress-0-0-1-package-tgz /home/jose/.npm/ed_stress/0.0.1/package.tgz
+46 verbose lock /home/jose/.npm/ed_stress/0.0.1/package.tgz /home/jose/.npm/11ab982f--npm-ed-stress-0-0-1-package-tgz.lock
+47 silly lockFile cd64c850-6540-0-10744761186651886-package /home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/package
+48 silly lockFile cd64c850-6540-0-10744761186651886-package /home/jose/tmp/npm-4129/1368022936540-0.10744761186651886/package
+49 silly lockFile 11ab982f--npm-ed-stress-0-0-1-package-tgz /home/jose/.npm/ed_stress/0.0.1/package.tgz
+50 silly lockFile 11ab982f--npm-ed-stress-0-0-1-package-tgz /home/jose/.npm/ed_stress/0.0.1/package.tgz
+51 silly lockFile a58f64ec-jose-npm-ed-stress-0-0-1-package /home/jose/.npm/ed_stress/0.0.1/package
+52 verbose lock /home/jose/.npm/ed_stress/0.0.1/package /home/jose/.npm/a58f64ec-jose-npm-ed-stress-0-0-1-package.lock
+53 silly lockFile a58f64ec-jose-npm-ed-stress-0-0-1-package /home/jose/.npm/ed_stress/0.0.1/package
+54 silly lockFile a58f64ec-jose-npm-ed-stress-0-0-1-package /home/jose/.npm/ed_stress/0.0.1/package
+55 verbose tar unpack /home/jose/.npm/ed_stress/0.0.1/package.tgz
+56 silly lockFile a58f64ec-jose-npm-ed-stress-0-0-1-package /home/jose/.npm/ed_stress/0.0.1/package
+57 verbose lock /home/jose/.npm/ed_stress/0.0.1/package /home/jose/.npm/a58f64ec-jose-npm-ed-stress-0-0-1-package.lock
+58 silly lockFile 11ab982f--npm-ed-stress-0-0-1-package-tgz /home/jose/.npm/ed_stress/0.0.1/package.tgz
+59 verbose lock /home/jose/.npm/ed_stress/0.0.1/package.tgz /home/jose/.npm/11ab982f--npm-ed-stress-0-0-1-package-tgz.lock
+60 silly gunzTarPerm modes [ '755', '644' ]
+61 silly gunzTarPerm extractEntry package.json
+62 silly gunzTarPerm extractEntry .npmignore
+63 silly gunzTarPerm extractEntry README.md
+64 silly gunzTarPerm extractEntry stress.js
+65 verbose read json /home/jose/.npm/ed_stress/0.0.1/package/package.json
+66 silly lockFile a58f64ec-jose-npm-ed-stress-0-0-1-package /home/jose/.npm/ed_stress/0.0.1/package
+67 silly lockFile a58f64ec-jose-npm-ed-stress-0-0-1-package /home/jose/.npm/ed_stress/0.0.1/package
+68 silly lockFile 11ab982f--npm-ed-stress-0-0-1-package-tgz /home/jose/.npm/ed_stress/0.0.1/package.tgz
+69 silly lockFile 11ab982f--npm-ed-stress-0-0-1-package-tgz /home/jose/.npm/ed_stress/0.0.1/package.tgz
+70 silly shasum updated bytes 1295
+71 info shasum 791ab17fccebd3c8ecb3386c5a3145135c9b48e7
+71 info shasum /home/jose/.npm/ed_stress/0.0.1/package.tgz
+72 verbose from cache /home/jose/.npm/ed_stress/0.0.1/package/package.json
+73 verbose chmod /home/jose/.npm/ed_stress/0.0.1/package.tgz 644
+74 verbose chown /home/jose/.npm/ed_stress/0.0.1/package.tgz [ 1000, 1000 ]
+75 silly lockFile 3a52ce78- .
+76 silly publish { name: 'ed_stress',
+76 silly publish   version: '0.0.1',
+76 silly publish   keywords: [ 'stress', 'load', 'test' ],
+76 silly publish   description: 'Creates fake load on an Etherdraw drawing',
+76 silly publish   contributors:
+76 silly publish    [ { name: 'John McLear',
+76 silly publish        email: 'john@mclear.co.uk',
+76 silly publish        url: 'http://mclear.co.uk' } ],
+76 silly publish   repository:
+76 silly publish    { type: 'git',
+76 silly publish      url: 'git://github.com/johnmclear/ed_stress.git' },
+76 silly publish   dependencies: { 'socket.io-client': '*' },
+76 silly publish   engines: { node: '*' },
+76 silly publish   readme: '# EtherDraw Stress Test Tool\n\n## Example Usage\n```\nnpm install ed_stress\nnode stress.js http://127.0.0.1:3000/d/test 100 10\n```\n\n## Options\n`` node stress.js [url] [number of clients] [delay between edits] ``\n\n## License\nApache 2\n',
+76 silly publish   readmeFilename: 'README.md',
+76 silly publish   _id: 'ed_stress@0.0.1',
+76 silly publish   dist: { shasum: '791ab17fccebd3c8ecb3386c5a3145135c9b48e7' },
+76 silly publish   _from: '.' }
+77 verbose url raw ed_stress
+78 verbose url resolving [ 'https://registry.npmjs.org/', './ed_stress' ]
+79 verbose url resolved https://registry.npmjs.org/ed_stress
+80 info trying registry request attempt 1 at 15:22:27
+81 http PUT https://registry.npmjs.org/ed_stress
+82 http 409 https://registry.npmjs.org/ed_stress
+83 verbose url raw ed_stress
+84 verbose url resolving [ 'https://registry.npmjs.org/', './ed_stress' ]
+85 verbose url resolved https://registry.npmjs.org/ed_stress
+86 info trying registry request attempt 1 at 15:22:43
+87 http GET https://registry.npmjs.org/ed_stress
+88 http 200 https://registry.npmjs.org/ed_stress
+89 error publish fail Cannot publish over existing version.
+89 error publish fail Update the 'version' field in package.json and try again.
+89 error publish fail
+89 error publish fail If the previous version was published in error, see:
+89 error publish fail     npm help unpublish
+89 error publish fail
+89 error publish fail To automatically increment version numbers, see:
+89 error publish fail     npm help version
+90 error System Linux 2.6.32-5-686
+91 error command "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+92 error cwd /home/jose/ed_stress
+93 error node -v v0.10.1
+94 error npm -v 1.2.15
+95 error code EPUBLISHCONFLICT
+96 verbose exit [ 1, true ]
