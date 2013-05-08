@@ -6,6 +6,7 @@ var room = url.split("/")[4]; // get the room from the url
 var serverUrl = url.split("/")[0] + "//" + url.split("/")[2]; // get the host url
 var clientCount = process.argv[3]; // get number of clients 
 var delayBetweenDrawings = process.argv[4]; // Seconds between each change
+var totalEdits = 0;
 delayBetweenDrawings = delayBetweenDrawings * 1000; // turn seconds into milliseconds..
 
 var i = 0; // for each clientcount create a client which will send edits
@@ -47,8 +48,9 @@ function createClient(userid){
       x: randCoOrd(),
       y: randCoOrd()
     }
-  
-    console.log("Sent Path to server for userid:", userid);
+
+    totalEdits++;  
+    console.log("Sent Path #"+totalEdits+" to the server");
     socket.emit('draw:end', room, userid, JSON.stringify(path_to_send)); // send the end event
   }, delayBetweenDrawings);
 }
