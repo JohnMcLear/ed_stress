@@ -6,6 +6,7 @@ var room = url.split("/")[4]; // get the room from the url
 var serverUrl = url.split("/")[0] + "//" + url.split("/")[2]; // get the host url
 var clientCount = process.argv[3]; // get number of clients 
 var delayBetweenDrawings = process.argv[4]; // Seconds between each change
+var sockets = {};
 
 // turn sconds into ms
 delayBetweenDrawings = delayBetweenDrawings * 1000;
@@ -13,26 +14,19 @@ delayBetweenDrawings = delayBetweenDrawings * 1000;
 var i = 0;
 // for each clientcount create a client which will send edits
 while (i < clientCount){
-  createClient();
+  var userid = uid();
+  console.log("Creating client with uid", userid);
+  createClient(uid);
   i++;
 }
 
-function createClient(){
-  var socket = io.connect(serverUrl);
-  socket.emit('subscribe', { room: room });
-
-  // Random User ID
-  // Used when sending data
-  var uid = (function () {
-    var S4 = function () {
-      return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
-    };
-    return (S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4());
-  }());
+function createClient(userid){
+  sockets[userid] = io.connect(serverUrl, {'force new connection': true});
+  sockets[userid].emit('subscribe', { room: room });
 
   setInterval(function(){
     var path_to_send = { 
-      name: uid,
+      name: userid,
       rgba: {
         blue: randColor(),
         green: randColor(),
@@ -51,7 +45,7 @@ function createClient(){
         "bottom": ["Point", randCoOrd(), randCoOrd()]
       }]
    }
-    socket.emit('draw:progress', room, uid, JSON.stringify(path_to_send));
+    sockets[userid].emit('draw:progress', room, userid, JSON.stringify(path_to_send));
     path_to_send.path = [],
     path_to_send.end = {
       x: randCoOrd(),
@@ -59,7 +53,7 @@ function createClient(){
     }
   
     console.log("Sent Path");
-    socket.emit('draw:end', room, uid, JSON.stringify(path_to_send));
+    sockets[userid].emit('draw:end', room, userid, JSON.stringify(path_to_send));
   }, delayBetweenDrawings);
 }
 
@@ -71,3 +65,12 @@ function randColor(){
 function randCoOrd(){
   return Math.floor(Math.random()*1000)
 }
+
+function uid() {
+  var S4 = function () {
+    return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+  };
+  return (S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4());
+}
+//());
+
