@@ -13,9 +13,7 @@ delayBetweenDrawings = delayBetweenDrawings * 1000;
 var i = 0;
 // for each clientcount create a client which will send edits
 while (i < clientCount){
-  setInterval(function(){
-    createClient();
-  }, 1000);
+  createClient();
   i++;
 }
 
@@ -32,35 +30,37 @@ function createClient(){
     return (S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4());
   }());
 
-  var path_to_send = { 
-    name: uid,
-    rgba: {
-      blue: randColor(),
-      green: randColor(),
-      opacity: randColor(),
-      red: randColor()
-    },
-    start: {
+  setInterval(function(){
+    var path_to_send = { 
+      name: uid,
+      rgba: {
+        blue: randColor(),
+        green: randColor(),
+        opacity: randColor(),
+        red: randColor()
+      },
+      start: {
+        x: randCoOrd(),
+        y: randCoOrd()
+      },
+      path: [{
+        "top": ["Point", randCoOrd(), randCoOrd()],
+        "bottom": ["Point", randCoOrd(), randCoOrd()]
+      }, {
+        "top": ["Point", randCoOrd(), randCoOrd()],
+        "bottom": ["Point", randCoOrd(), randCoOrd()]
+      }]
+   }
+    socket.emit('draw:progress', room, uid, JSON.stringify(path_to_send));
+    path_to_send.path = [],
+    path_to_send.end = {
       x: randCoOrd(),
       y: randCoOrd()
-    },
-    path: [{
-      "top": ["Point", randCoOrd(), randCoOrd()],
-      "bottom": ["Point", randCoOrd(), randCoOrd()]
-    }, {
-      "top": ["Point", randCoOrd(), randCoOrd()],
-      "bottom": ["Point", randCoOrd(), randCoOrd()]
-    }]
-  }
-  socket.emit('draw:progress', room, uid, JSON.stringify(path_to_send));
-  path_to_send.path = [],
-  path_to_send.end = {
-    x: randCoOrd(),
-    y: randCoOrd()
-  }
-
-  console.log("Sent Path");
-  socket.emit('draw:end', room, uid, JSON.stringify(path_to_send));
+    }
+  
+    console.log("Sent Path");
+    socket.emit('draw:end', room, uid, JSON.stringify(path_to_send));
+  }, delayBetweenDrawings);
 }
 
 
