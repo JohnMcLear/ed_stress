@@ -1,0 +1,28 @@
+{
+  "name": "ed_stress",
+  "version": "0.0.1",
+  "keywords": [
+    "stress",
+    "load",
+    "test"
+  ],
+  "description": "Creates fake load on an Etherdraw drawing",
+  "contributors": [
+    {
+      "name": "John McLear",
+      "email": "john@mclear.co.uk",
+      "url": "http://mclear.co.uk"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/johnmclear/ed_stress.git"
+  },
+  "dependencies": {
+    "socket.io-client": "*",
+    "async": "*"
+  },
+  "engines": {
+    "node": "*"
+  }
+}
