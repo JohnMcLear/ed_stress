@@ -1,5 +1,4 @@
 var io = require('socket.io-client');
-var async = require('async');
 
 // node stress.js [url] [number of clients] [delay between edits]
 var url = process.argv[2]; // gets the full url

@@ -19,8 +19,7 @@
     "url": "git://github.com/johnmclear/ed_stress.git"
   },
   "dependencies": {
-    "socket.io-client": "*",
-    "async": "*"
+    "socket.io-client": "*"
   },
   "engines": {
     "node": "*"
