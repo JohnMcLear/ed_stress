@@ -30,7 +30,7 @@ function createClient(userid){
         opacity: Math.random(),
         red: Math.random()
       },
-      type: "draw",
+      tool: "draw",
       start: {
         x: randCoOrd(),
         y: randCoOrd()
